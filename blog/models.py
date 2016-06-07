@@ -8,3 +8,10 @@ class Post(models.Model):
     pub_date = models.DateTimeField('date published')
     view_count = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
+
+    def __str__(self):
+        return "title: {post.post_title}\n"\
+                "body: {post.post_body}\n"\
+                "pub_date: {post.pub_date}\n"\
+                "view_count: {post.view_count}\n"\
+                "likes: {post.likes}".format(post=self)
