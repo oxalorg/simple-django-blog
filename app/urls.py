@@ -15,8 +15,19 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+import blog.views
 
 urlpatterns = [
+    url(r'^$', blog.views.front, name='front'),
+    url(r'^about/', blog.views.about,
+        name='about'),
+    url(r'^support/', blog.views.support,
+        name='support'),
     url(r'^blog/', include('blog.urls')),
     url(r'^admin/', admin.site.urls),
 ]
+
+# Don't know where else to put this.
+# Should work here for now.
+admin.site.site_header = 'Earthly Admins'
+admin.site.site_title = 'Earthly Admins'
