@@ -1,0 +1,132 @@
+/* main */
+body {
+    font-size: 1.75em;
+}
+
+.nav-right{
+    border-left: 1px solid #777;
+}
+
+.nav-right ul{
+    list-style: none;
+    padding-left: 10px;
+}
+
+.nav-mobile ul{
+    list-style: none;
+    padding-left: 10px;
+}
+
+.nav-mobile ul{
+    float: left;
+    padding-left: 10px;
+}
+
+.nav-mobile{
+    float: right;
+    padding: 20px;
+}
+
+#menu-icon {
+	width: 40px;
+	height: 40px;
+}
+
+.nav-line{
+    margin: 5px;
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #000;
+    border-radius: 1px;
+}
+
+a:hover#menu-icon {
+
+	background-color: #444;
+	border-radius: 4px 4px 0 0;
+
+}
+
+/* Mobile nav*/
+
+a.to-nav {
+    float: right;
+    color: #fff;
+    background: #333;
+    text-decoration: none;
+    padding: 0 10px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 22px;
+    height: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+a.to-nav:hover,
+a.to-nav:focus {
+    color: #1c1c1c;
+    background: #33791D;
+}
+
+/*navigation*/
+
+#mobile-nav-xs ul {
+    list-style: none;
+    background: #1c1c1c;
+    padding: 5px 0;
+}
+
+#mobile-nav-xs li a {
+    display: block;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
+    height: 1.5em;
+    border-bottom: 1px solid #383838;
+}
+
+#mobile-nav-xs li:last-child a {
+    border-bottom: none;
+}
+
+#mobile-nav-xs li a:hover,
+#mobile-nav-xs li a:focus {
+    color: #1c1c1c;
+    background: #ccc;
+}
+
+#mobile-nav-sm ul {
+    display: table;
+    width: 100%;
+    list-style: none;
+    background: #1c1c1c;
+    padding: 5px 0;
+}
+
+#mobile-nav-sm li{
+    display: table-cell;
+    text-align: center;
+}
+
+#mobile-nav-sm li a {
+    display: block;
+    color: #fff;
+    padding: 0px 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
+    height: 1.5em;
+}
