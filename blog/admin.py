@@ -5,11 +5,11 @@ from .models import Post
 # Register your models here.
 class PostAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['post_title', 'post_body']}),
+        (None, {'fields': ['title', 'body']}),
         ('Meta Info', {'fields': ['pub_date']})
     ]
-    list_display = ('post_title', 'pub_date')
-    search_fields = ['post_title']
+    list_display = ('title', 'pub_date')
+    search_fields = ['title']
 
 
 admin.site.register(Post, PostAdmin)
