@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    {% block static %}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'blog/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/main.css' %}">
+    <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+    {% endblock %}
+    {% block script %}{% endblock %}
+    {% block style %}{% endblock %}
+</head>
+<body>
+{% block body %}{% endblock %}
+</body>
+</html>
