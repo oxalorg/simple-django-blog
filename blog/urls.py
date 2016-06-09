@@ -1,4 +1,8 @@
 from django.conf.urls import url
-from . import views
+from .views import archive, article
 
-urlpatterns = [url(r'^$', views.index, name='index')]
+urlpatterns = [
+    url(r'^$', archive, name='archive'), url(r'(?P<slug>[a-zA-Z_0-9\-]*)',
+                                             article,
+                                             name='article')
+]

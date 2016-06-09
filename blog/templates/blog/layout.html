@@ -36,7 +36,7 @@
         <ul>
             <li><a href="{% url 'front' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'about' %}">Archives</a></li>
+            <li><a href="{% url 'archive' %}">Archives</a></li>
             <li><a href="{% url 'about' %}">Contact</a></li>
             <li><a href="{% url 'support' %}">Support</a></li>
         </ul>
@@ -47,11 +47,19 @@
             {% block content %}{% endblock %}
         </div>
         <div class="col-md-3 hidden-xs hidden-sm nav-right">
+            <div class="sidebar-section">
+
+            <h3>Popular posts</h3>
             <ul>
-                <li><a href="{% url 'front' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'support' %}">Show some love</a></li>
+                {% for post in popular_posts %}
+                <li><a href="{% url 'article' post.slug %}">{{ post.title }}</a>
+                    <div class="post-excerpt">
+                        {{ post.html | truncatewords_html:50 | safe }}
+                    </div>
+                </li>
+                {% endfor %}
             </ul>
+            </div>
         </div>
     </div>
     <div class="row hidden-md hidden-lg" id="mobile-nav">
@@ -59,7 +67,7 @@
             <ul>
                 <li><a href="{% url 'front' %}">Home</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'about' %}">Archives</a></li>
+                <li><a href="{% url 'archive' %}">Archives</a></li>
                 <li><a href="{% url 'about' %}">Contact</a></li>
                 <li><a href="{% url 'about' %}">Show some love</a></li>
             </ul>

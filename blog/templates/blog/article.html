@@ -1,0 +1,10 @@
+{% extends "blog/layout.html" %}
+{% block content %}
+{% if post %}
+<h1 class="text-center"><a href="{% url 'article' post.slug %}">{{ post.title}}</a></h1>
+<p><small>Views: {{ post.view_count }}</small></p>
+{{ post.html | safe }}
+{% else %}
+    <h1>No post to display!</h1>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "blog/layout.html" %}
+{% block content %}
+{% for arch in archive %}
+<h1>{{ arch.year }}</h1>
+    {% if arch.posts %}
+        <ul>
+            {% for post in arch.posts %}
+                <li><a href="{% url 'article' post.slug %}">{{ post.title }}</a> - <small><em>{{ post.pub_date | date }}</em></small></li>
+            {% endfor %}
+            <hr>
+        </ul>
+    {% else %}
+        <p>No posts this year! IMPOSSIBRU!</p>
+    {% endif %}
+{% endfor %}
+{% endblock %}
