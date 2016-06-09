@@ -1,0 +1,37 @@
+{% extends "blog/layout.html" %}
+{% block content %}
+<h1 class="text-center">Contact us</h1>
+<br>
+<p>
+    Our email address: <a href="mailto:gaia@earthlyhumans.com">gaia@earthlyhumans.com</a><br>
+    <small>Gaia is the goddess of earth in greek mythology.</small>
+</p>
+<hr>
+<h3>
+    Directly contact us:
+</h3>
+<form method="POST" action="http://mitesh.ninja/api/sendForm/gaia@earthlyhumans.com/">
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="senderEmail">Email address</label>
+            <input class="form-control" placeholder="email@address.com"type="email" id="senderEmail" name="senderEmail" value="" required>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="senderName">Name:</label>
+            <input class="form-control" placeholder="Real or fake name"type="text" id="senderName" name="senderName" value="" required>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <textarea class="form-control" rows="8" placeholder="pls pls pls send us a message" required=""></textarea>
+    </div>
+</div>
+<br>
+<input class="form-control btn btn-primary" type="submit" value="Send" name="submit" />
+</form>
+
+{% endblock %}
