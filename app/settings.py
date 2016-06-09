@@ -119,3 +119,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# SSL
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
