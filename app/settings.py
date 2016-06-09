@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -19,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%2@+b24f@7cpo_lre$df2or=yt2c&+(+7ji41$u4@2n%c+2*f$'
+SECRET_KEY = config.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -123,3 +124,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # SSL
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
+
+# Error reporting
+ADMINS = config.ADMINS
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = config.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = config.EMAIL_HOST_PASSWORD
