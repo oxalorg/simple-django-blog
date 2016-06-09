@@ -3,6 +3,32 @@
     body{font-size: 1.6em;}
 }
 
+#header-logo{
+    position:relative;
+}
+
+#header-grass{
+    position: absolute;
+    bottom: 0;
+    height: 20px;
+    width: 100%;
+    margin-right: 0px;
+    padding: auto;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    z-index: 10;
+}
+
+#header-grass2{
+	background: url('../img/grass2.png') repeat-x 0 -42px;
+	width: 100%;
+	height: 66px;
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+}
+
 a {
     background-color: #338618;
     /*background-color: #4581F5;*/
