@@ -1,4 +1,17 @@
 {% extends "blog/layout.html" %}
+{% block script %}
+{{ block.super }}
+{% endblock %}
+{% block title %}
+{{post.title}}
+{% endblock %}
+{% block social %}
+<meta property="og:url"           content="{% url 'article' post.slug %}" />
+<meta property="og:type"          content="article" />
+<meta property="og:title"         content="{{ post.title }}" />
+<meta property="og:description"   content="{{ post.title }}" />
+<meta property="og:image"         content="" />
+{% endblock %}
 {% block content %}
 {% if post %}
 <h1 class="post-header"><a href="{% url 'article' post.slug %}">{{ post.title}}</a></h1>
@@ -8,6 +21,21 @@
     </small>
 </div>
 {{ post.html | safe }}
+<br>
+{% load static %}
+<div class="social-share text-center">
+    <ul class="share-buttons">
+      <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fearthlyhumans.com%2F&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img src="{% static 'blog/flat_web_icon_set/color/Facebook.png' %}"></a></li>
+      <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Fearthlyhumans.com%2F&text=:%20https%3A%2F%2Fearthlyhumans.com%2F&via=earthlyhumans" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img src="{% static 'blog/flat_web_icon_set/color/Twitter.png' %}"></a></li>
+      <li><a href="https://plus.google.com/share?url=https%3A%2F%2Fearthlyhumans.com%2F" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img src="{% static 'blog/flat_web_icon_set/color/Google+.png' %}"></a></li>
+      <li><a href="http://www.tumblr.com/share?v=3&u=https%3A%2F%2Fearthlyhumans.com%2F&t=&s=" target="_blank" title="Post to Tumblr" onclick="window.open('http://www.tumblr.com/share?v=3&u=' + encodeURIComponent(document.URL) + '&t=' +  encodeURIComponent(document.title)); return false;"><img src="{% static 'blog/flat_web_icon_set/color/Tumblr.png' %}"></a></li>
+      <li><a href="http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fearthlyhumans.com%2F&description=" target="_blank" title="Pin it" onclick="window.open('http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(document.URL) + '&description=' +  encodeURIComponent(document.title)); return false;"><img src="{% static 'blog/flat_web_icon_set/color/Pinterest.png' %}"></a></li>
+      <li><a href="https://getpocket.com/save?url=https%3A%2F%2Fearthlyhumans.com%2F&title=" target="_blank" title="Add to Pocket" onclick="window.open('https://getpocket.com/save?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img src="{% static 'blog/flat_web_icon_set/color/Pocket.png' %}"></a></li>
+      <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Fearthlyhumans.com%2F&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img src="{% static 'blog/flat_web_icon_set/color/Reddit.png' %}"></a></li>
+      <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fearthlyhumans.com%2F&title=&summary=&source=https%3A%2F%2Fearthlyhumans.com%2F" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img src="{% static 'blog/flat_web_icon_set/color/LinkedIn.png' %}"></a></li>
+      <li><a href="mailto:?subject=&body=:%20https%3A%2F%2Fearthlyhumans.com%2F" target="_blank" title="Email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img src="{% static 'blog/flat_web_icon_set/color/Email.png' %}"></a></li>
+    </ul></div>
+<br>
 {% else %}
 <h1>No post to display!</h1>
 {% endif %}

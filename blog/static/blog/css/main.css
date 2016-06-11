@@ -234,3 +234,21 @@ footer{
 h1,h2,h3,h4,h5,h6{
     text-align: center;
 }
+
+
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li{
+  display: inline;
+}
+
+ul.share-buttons img{
+    display: inline;
+}
+
+ul.share-buttons a:hover, a:focus{
+    background-color: transparent;
+}
