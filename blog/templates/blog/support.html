@@ -1,20 +1,4 @@
 {% extends "blog/layout.html" %}
 {% block content %}
-<h1 class="text-center">Show us some love &lt3</h1>
-<br>
-<p><strong>Note: We are not accepting donations at the moment. Instead <a href="{% url 'contact' %}">contact</a> us and help us with your skills :)</strong></p>
-<p>
-    <strong>OR, you can help us by spreading the word!</strong>
-</p>
-
-<hr>
-<p>
-    Earthly Humans remains ad-free. We're just trying to spread love and hoping to get some love back in return.
-</p>
-<p>
-    We need donations to keep running. Our current expenditures are as follows:
-        <ul>
-            <li>$5 server hosting per month. Yearly: $60</li>
-        </ul>
-</p>
+{{ page_content | safe }}
 {% endblock %}

@@ -1,37 +1,45 @@
 {% extends "blog/layout.html" %}
 {% block content %}
-<h1 class="text-center">Contact us</h1>
+<h1>Call me maybe?</h1>
 <br>
 <p>
-    Our email address: <a href="mailto:gaia@earthlyhumans.com">gaia@earthlyhumans.com</a><br>
-    <small>Gaia is the goddess of earth in greek mythology.</small>
+Feel free to drop in an email at <a href="mailto:gaia@earthlyhumans.com">gaia@earthlyhumans.com</a>. We've got a ninja monkey deployed (yeah that's me) who will take care of the emails you send.
 </p>
-<hr>
-<h3>
-    Directly contact us:
-</h3>
+<p>
+<small><em>Fun fact: Gaia is the goddess of earth. She's the mother of all gods, titans, and the entire universe in the greek mythology. In religions and mythologies all across the world, there is a great importance given to the earth, maybe it's time we give her too!</em></small>
+
+</p>
+
+<p>
+You can also contact us using the form below:
+</p>
+
 <form method="POST" action="http://mitesh.ninja/api/sendForm/gaia@earthlyhumans.com/">
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="form-group">
-            <label for="senderEmail">Email address</label>
+            <textarea class="form-control" rows="4" placeholder="Message" required=""></textarea>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="form-group">
             <input class="form-control" placeholder="email@address.com"type="email" id="senderEmail" name="senderEmail" value="" required>
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-sm-4">
         <div class="form-group">
-            <label for="senderName">Name:</label>
-            <input class="form-control" placeholder="Real or fake name"type="text" id="senderName" name="senderName" value="" required>
+            <input class="form-control" placeholder="Name" type="text" id="senderName" name="senderName" value="" required>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <input class="form-control btn btn-primary" type="submit" value="Send" name="submit" />
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-12">
-        <textarea class="form-control" rows="8" placeholder="pls pls pls send us a message" required=""></textarea>
-    </div>
-</div>
 <br>
-<input class="form-control btn btn-primary" type="submit" value="Send" name="submit" />
 </form>
 
 {% endblock %}

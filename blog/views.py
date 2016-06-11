@@ -28,7 +28,7 @@ def front(request):
 
 
 def about(request):
-    html = Markdown2Html().convert(dedent("""
+    html = Markdown2Html().convert(dedent("""\
     We have, on an average, 7 minutes of your time before you leave this page and we can no longer jam an impression on you. But we feel that your time is valuable, so here we go.
 
     ### Earthly Humans
@@ -39,66 +39,34 @@ def about(request):
 
     We believe that simple is better than complicated, and that less is actually more. So we won't be wasting your time with fluff, instead we'll use a serene combination of thoughts and art to convey our message.
 
-    ---
-
-    ### Call me maybe?
-
-    Feel free to drop in an email at [gaia@earthlyhumans.com](gaia@earthlyhumans.com). We've got a ninja monkey deployed (yeah that's me) who will take care of the emails you send.
-
-    <small><em>Fun fact: Gaia is the goddess of earth. She's the mother of all gods, titans, and the entire universe in the greek mythology. In religions and mythologies all across the world, there is a great importance given to the earth, maybe it's time we give her too!</em></small>
-
-    You can also contact us using the form below:
-
-    <form method="POST" action="http://mitesh.ninja/api/sendForm/gaia@earthlyhumans.com/">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-                <textarea class="form-control" rows="4" placeholder="Message" required=""></textarea>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="form-group">
-                <input class="form-control" placeholder="email@address.com"type="email" id="senderEmail" name="senderEmail" value="" required>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="form-group">
-                <input class="form-control" placeholder="Name" type="text" id="senderName" name="senderName" value="" required>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="form-group">
-                <input class="form-control btn btn-primary" type="submit" value="Send" name="submit" />
-            </div>
-        </div>
-    </div>
-    <br>
-    </form>
-
-    ---
-
-    ### Show us some love
-
-    Currently we remain ad-free, and I will be paying the bills out of my own pockets. But you're welcome to help us pay our server and hosting bills by leaving a small donation ($6 will cover our monthly expenses).
-
-    ---
-
     ### WE not ME
 
-    I keep using 'we', instead of 'me' because I want to encourage anyone to come and help in this effort.
+    I keep using 'we', instead of 'me' because I want to encourage anyone to come and [help in this effort](/support)
 
     List of all researchers, contributors, supporters, and volunteers:
 
     * Mitesh Shah - [miteshshah.com](http://miteshshah.com)
     """))
-    context = {'about_html': html}
+    context = {'page_content': html}
     return base_render(request, 'blog/about.html', context)
 
 
 def support(request):
-    return base_render(request, 'blog/support.html')
+    html = Markdown2Html().convert(dedent("""\
+    # Show us some love <3
+
+    Currently we remain ad-free, and I will be paying the bills out of my own pockets. But you're welcome to help us pay our server and hosting bills by leaving a small donation ($6 will cover our monthly expenses).
+
+    You can also support us
+
+    * by spreading the word. Share our initiative with humans you care about!
+    * by sending feedback at [hermes@earthlyhumans.com](mailto:hermes@earthlyhumans.com)
+        - <small><em>Fun fact: Hermes is the god of trade, communication, and language in the greek mythology.</em></small>
+    * by contributing your thoughts. Send us your views on *anything* at [athena@earthlyhumans.com](mailto:athena@earthlyhumans.com)
+        - <small><em>Fun fact: Athena is the goddess of intelligence and wisdom in the greek mythology.</em></small>
+    """))
+    context = {'page_content': html}
+    return base_render(request, 'blog/support.html', context)
 
 
 def contact(request):
