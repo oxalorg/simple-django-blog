@@ -1,7 +1,10 @@
 {% extends "blog/layout.html" %}
+{% load static %}
 {% block content %}
-<h1 class="text-center">What is this? Who are we?</h1>
+<h1 class="text-center">Let's play detective!</h1>
 
+<img class="img-responsive center-block" style="height:150px;" src="{% static 'blog/img/detective.png' %}" alt="detective" />
+{{ about_html | safe }}
 <p>
     We want to change the world (or atleast try to) by spreading awareness about interesting topics which we feel aren't talked about enough.
 </p>
