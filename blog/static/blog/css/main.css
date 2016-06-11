@@ -30,7 +30,7 @@
 }
 
 a {
-    background-color: #338618;
+    color: #338618;
     /*background-color: #4581F5;*/
 }
 
@@ -164,6 +164,7 @@ a.to-nav:focus {
 
 #mobile-nav-sm li{
     display: table-cell;
+    background-color: #338618;
     text-align: center;
 }
 
