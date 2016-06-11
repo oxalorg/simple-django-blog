@@ -194,3 +194,42 @@ a.to-nav:focus {
     text-align: center;
     color: #a0a0a0;
 }
+
+.social-share * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+
+/*FOOTER*/
+
+footer{
+    background-color: #338618;
+}
+
+#footer-row{
+    /*border-top: 1px solid #338618;*/
+    font-size: small;
+    padding: 10px 20px;
+}
+
+#footer-row ul {
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+#footer-row li {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+#footer-row a {
+    background-color: inherit;;
+    color: #eee;
+}
+
+h1,h2,h3,h4,h5,h6{
+    text-align: center;
+}

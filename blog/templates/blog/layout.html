@@ -6,30 +6,29 @@
         <!-- <figure id="header-grass" style="background-image:url({% static 'blog/img/grass.png' %})"></figure> -->
         <figure id="header-grass2"></figure>
         <!-- Grass credit goes to Krasi Wasilev from freegameassets -->
-        <div class="col-md-3">
-            <figure class=></figure>
+        <div class="col-lg-3 visible-lg">
         </div>
-        <div class="col-md-6">
+        <div class="col-lg-6">
             <img class="img-responsive center-block" style="height:250px;" src="{% static 'blog/logo/earthlyhumans_logo.png' %}" alt="earthlyhuman_logo" />
         </div>
-        <div class="col-md-3">
+        <div class="col-lg-3 visible-lg">
 
         </div>
-            <div class="row visible-xs" style="position:absolute;top:20px;right:30px;">
-                <a class="to-nav" href="#mobile-nav">
-                    <span class="nav-line"></span>
-                    <span class="nav-line"></span>
-                    <span class="nav-line"></span>
-                </a>
-            </div>
+        <!-- <div class="row visible-xs" style="position:absolute;top:20px;right:30px;">
+            <a class="to-nav" href="#mobile-nav">
+                <span class="nav-line"></span>
+                <span class="nav-line"></span>
+                <span class="nav-line"></span>
+            </a>
+        </div> -->
     </div>
-    <div class="row hidden-xs" id="mobile-nav-sm">
+    <div class="row " id="mobile-nav-sm">
         <ul>
             <li><a href="{% url 'front' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'archive' %}">Archives</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-            <li><a href="{% url 'support' %}">Support us</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <!-- <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'support' %}">Support us</a></li> -->
         </ul>
     </div>
     <br>
@@ -53,18 +52,18 @@
             </div>
         </div>
     </div>
-    <div class="row hidden-md hidden-lg" id="mobile-nav">
+    <!-- <div class="row hidden-md hidden-lg" id="mobile-nav">
         <br>
         <br>
         <div class="col-xs-12 hidden-sm" id="mobile-nav-xs">
             <ul>
                 <li><a href="{% url 'front' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="{% url 'archive' %}">Archives</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
                 <li><a href="{% url 'support' %}">Show some love</a></li>
             </ul>
         </div>
-    </div>
+    </div> -->
 </div>
 {% endblock %}
