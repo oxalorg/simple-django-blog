@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.http import HttpResponse
 from .models import Post
 from django.db.models import F
@@ -74,7 +74,7 @@ def contact(request):
 
 
 def article(request, slug):
-    post = Post.objects.filter(slug=slug)
+    post = get_list_or_404(slug=slug)
     post.update(view_count=F('view_count') + 1)
     context = {'post': post[0]}
     return base_render(request, 'blog/article.html', context)
